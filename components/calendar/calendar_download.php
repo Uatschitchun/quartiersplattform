@@ -1,18 +1,10 @@
 <?php
 
 // needed variabels
-<<<<<<< HEAD
 $date_start = get_field('event_date', $post); //Startdatum
 $time_start = get_field('event_time', $post); //Startzeit
 $time_end = get_field('event_end_time', $post); //Endzeit
 $date_end = get_field('event_end_date', $post); //Enddatum
-=======
-$date = get_field('event_date', $post);
-$time = get_field('event_time', $post);
-$time_end = get_field('event_end_time', $post);
-$date_end = get_field('event_end_date', $post);
-$frequenz = get_field('event_frequency',$post);
->>>>>>> cefc2af565f612ef902f812da97591065fe3ef81
         
 $title = get_the_title();
 $start = date('Ymd', strtotime("$date_start $time_start")) . "T" . date('His', strtotime("$date_start $time_start"));
