@@ -5,18 +5,37 @@ $args_chronik = array(
     'post_status'=>'publish', 
     'posts_per_page'=> 10,
     'offset' => '0', 
-    'meta_query' => array(
-        'relation' => 'AND',
-        'date_clause' => array(
+    'meta_query' =>
+    array(
+        'relation' => 'OR', // change relation to OR
+        'date_clause' =>
+	array(
             'key' => 'event_date',
             'value' => date("Y-m-d"),
-            'compare'	=> '>=',
+            'compare' => '>=',
             'type' => 'DATE'
         ),
-        'time_clause' => array(
-            'key' => 'event_time',
-            'compare'	=> '=',
-        ),
+        'multi_day_clause' =>
+	array(
+            'relation' => 'AND',
+            array(
+                'key' => 'event_start_date',
+                'value' => date("Y-m-d"),
+                'compare' => '<=',
+                'type' => 'DATE'
+            ),
+            array(
+                'key' => 'event_end_date',
+                'value' => date("Y-m-d"),
+                'compare' => '>=',
+                'type' => 'DATE'
+            )
+        )
+        'time_clause' =>
+        array(
+        'key' => 'event_time',
+        'compare'  => '=',
+        )
     ),
     'orderby' => array(
         'date_clause' => 'ASC',
@@ -29,7 +48,6 @@ $args_chronik = array(
             'terms' => ".$post->post_name."
         )
     )
-
 );
 
 if (count_query($args_chronik)) {
