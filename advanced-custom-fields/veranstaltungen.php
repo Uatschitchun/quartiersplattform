@@ -132,7 +132,11 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => __('Datum','quartiersplattform'),
                 'name' => 'event_date',
                 'type' => 'date_picker',
+<<<<<<< HEAD
                 'instructions' => __('Wann wird deine Veranstaltung stattfinden bzw. beginnen?','quartiersplattform'),
+=======
+                'instructions' => __('Wann wird deine Veranstaltung stattfinden/beginnen?','quartiersplattform'),
+>>>>>>> cefc2af565f612ef902f812da97591065fe3ef81
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -190,11 +194,45 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
+<<<<<<< HEAD
                 'display_format' => 'j. F Y',
+=======
+                'display_format' => 'F j, Y',
+>>>>>>> cefc2af565f612ef902f812da97591065fe3ef81
                 'return_format' => 'Y-m-d',
                 'first_day' => 1,
             ),
             array(
+<<<<<<< HEAD
+=======
+                'key' => 'field_63137dc0b7174',
+                'label' => 'Wiederholung',
+                'name' => 'event_frequency',
+                'type' => 'select',
+                'instructions' => __('In welchem Rhytmus findet die Veranstaltung statt?','quartiersplattform'),
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'täglich' => 'täglich',
+                    'wöchentlich' => 'wöchentlich',
+                    'monatlich' => 'monatlich',
+                    'jährlich' => 'jährlich',
+                ),
+                'default_value' => 'daily',
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+            array(
+>>>>>>> cefc2af565f612ef902f812da97591065fe3ef81
                 'key' => 'field_5fc8d1c4d15c8',
                 'label' => __('Website','quartiersplattform'),
                 'name' => 'website',
