@@ -66,7 +66,11 @@ get_header();
                         } else {
                             echo _e('Veranstaltung', 'quartiersplattform'). "<br>";
                             echo qp_date(get_field('event_date'), true, get_field('event_time'));
-                            echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_date'), true, get_field('event_end_time'), true) . "<br>";
+                            if (get_field('event_end_time')) {
+                            	echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_date'), true, get_field('event_end_time'), true) . " Uhr <br>";
+                            } else {
+                            echo " Uhr";
+                            }
                         }
                     ?>
                     </span>
